@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import logo from "./sort-alpha-down-solid.svg";
 import "./App.css";
 import TodoItem from "./components/TodoItem";
+import logo from "./sort-alpha-down-solid.svg";
+// import TodoListHook from "./components/TodoListHook";
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
     console.log(this.state.contents);
     return (
       <div className="App">
+        {/* <TodoListHook /> */}
         <header className="App-header">
           <h1>To-Do</h1>
           <button onClick={() => this.sortTodo()} className="btn-sort">
@@ -51,11 +53,6 @@ class App extends Component {
         </header>
         <section className="App-content">
           <ul className="todo-container">
-            {/* <TodoItem
-              content={"Do homework"}
-              deleteTodo={this.deleteTodo}
-              editTodo={this.editTodo}
-            /> */}
             {this.state.contents.map((content, idx) => (
               <TodoItem
                 key={idx}
@@ -64,10 +61,6 @@ class App extends Component {
                 editTodo={this.editTodo}
               />
             ))}
-            {/* <div className="todo-container">  ร่าง
-            <li className="todotext">helo</li>
-            <button className="btn-edit">Edit</button>
-          </div> */}
           </ul>
         </section>
         <footer className="App-footer">
